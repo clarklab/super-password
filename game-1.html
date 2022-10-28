@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="h-screen">
+<head>
+  <title>Super Password</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+
+  <script>
+    
+    $( document ).ready(function() {
+      $( ".clue div" ).on( "click", function() {
+        $(this).toggleClass("reveal");
+      });
+      $( ".answer div" ).on( "click", function() {
+        $(this).toggleClass("reveal");
+      });
+    });
+  </script>
+</head>
+
+<style>
+
+  .answer div.reveal{
+    animation: blink .5s infinite;
+    }
+    @keyframes blink{
+      to{
+        border-color: #fff;
+      } from {
+        border-color: #eab308;
+      }
+    }
+
+  .clue div:after{
+    position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+    height: 100%;
+    display: block;
+    content: " ";
+    background: #1e3a8a;
+    transition: .5s ease all;
+  }
+
+  .answer div:after{
+    position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+    height: 100%;
+    display: block;
+    content: " ";
+    background: #fff url(logo.png) no-repeat center center;
+    background-size: auto 70%;
+    transition: .5s ease all;
+  }
+
+  .clue div.reveal:after, .answer div.reveal:after{
+    transform: translateY(120%);
+  }
+
+</style>
+<body class="h-screen bg-red-500">
+
+  <div class="board h-screen text-center text-5xl font-bold pb-4">
+
+
+  <div class="answer flex justify-center items-center h-1/6 p-4 pb-0 overflow-hidden">
+    <div class="uppercase relative bg-white w-full h-full flex justify-center items-center border-8 border-dotted border-white">Elvis Presley</div>
+  </div>
+
+  
+
+  <div class="clue flex justify-center items-center h-1/6 p-4 pb-0 overflow-hidden">
+    <div class="bg-blue-700 relative text-white uppercase w-full h-full flex justify-center items-center">Music</div>
+  </div>
+
+  <div class="clue flex justify-center items-center h-1/6 p-4 pb-0 overflow-hidden">
+    <div class="bg-blue-700 relative text-white uppercase w-full h-full flex justify-center items-center">Rock</div>
+  </div>
+
+  <div class="clue flex justify-center items-center h-1/6 p-4 pb-0 overflow-hidden">
+    <div class="bg-blue-700 relative text-white uppercase w-full h-full flex justify-center items-center">Roll</div>
+  </div>
+
+  <div class="clue flex justify-center items-center h-1/6 p-4 pb-0 overflow-hidden">
+    <div class="bg-blue-700 relative text-white uppercase w-full h-full flex justify-center items-center">Guitar</div>
+  </div>
+
+  <div class="clue flex justify-center items-center h-1/6 p-4 pb-0 overflow-hidden">
+    <div class="bg-blue-700 relative text-white uppercase w-full h-full flex justify-center items-center">King</div>
+  </div>
+    
+  </div>
+</body>
+</html>
