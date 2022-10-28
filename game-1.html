@@ -11,13 +11,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <script>
+
+    $('#play').click(function() {
+  
+});
     
     $( document ).ready(function() {
       $( ".clue div" ).on( "click", function() {
         $(this).toggleClass("reveal");
+        const audio = new Audio("https://cdn.freesound.org/previews/540/540668_3666342-lq.mp3");
+        audio.play();
       });
       $( ".answer div" ).on( "click", function() {
         $(this).toggleClass("reveal");
+        const audio = new Audio("bell.m4a");
+        audio.play();
       });
     });
   </script>
@@ -30,6 +38,9 @@
 
   .answer div.reveal{
     animation: blink .3s infinite;
+    border-width: 1.25rem;
+    border-style: dotted;
+    border-color: #fff;
     }
     @keyframes blink{
       to{
@@ -47,6 +58,7 @@
     background: #1e3a8a url(clue-bg.svg) no-repeat;
     background-position: center center;
     background-size: auto 85%;
+    border: 12px solid #1e3a8a;
     transition: .5s ease all;
   }
 
@@ -61,7 +73,7 @@
   }
 
   .clue div.reveal:after, .answer div.reveal:after{
-    transform: translateY(120%);
+    transform: translateY(140%);
   }
 
   .h-screen{
@@ -74,7 +86,7 @@
 
 
   <div class="answer flex justify-center items-center h-1/6 p-4 pb-0 overflow-hidden">
-    <div class="uppercase relative bg-white w-full h-full flex justify-center items-center border-[1.25rem] border-dotted border-white">Elvis Presley</div>
+    <div class="uppercase relative bg-white w-full h-full flex justify-center items-center">Elvis Presley</div>
   </div>
 
   
