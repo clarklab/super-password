@@ -12,6 +12,13 @@
 
 </style>
 <body class="grid items-center justify-center h-screen bg-red-500">
+  <div>
   <a href="game-1.html"><img src="bert.jpg" alt=""></a>
+  <select class="w-full mt-2" name='m-menu' onfocus="this.selectedIndex = 0" onchange='location = this.options[this.selectedIndex].value;'>
+    <option selected value="">Select a Game</option>
+    <option value='game-sample.html'>Sample Game</option>
+    <option value='game-1.html'>Game 1</option>
+  </select>
+  </div>
 </body>
 </html>
