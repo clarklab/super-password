@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <script>
     
@@ -22,8 +25,11 @@
 
 <style>
 
+  body{ font-family: 'Bebas Neue', cursive;
+}
+
   .answer div.reveal{
-    animation: blink .5s infinite;
+    animation: blink .3s infinite;
     }
     @keyframes blink{
       to{
@@ -38,7 +44,9 @@
     height: 100%;
     display: block;
     content: " ";
-    background: #1e3a8a;
+    background: #1e3a8a url(clue-bg.svg) no-repeat;
+    background-position: center center;
+    background-size: auto 85%;
     transition: .5s ease all;
   }
 
@@ -56,14 +64,17 @@
     transform: translateY(120%);
   }
 
+  .h-screen{
+    height: calc( 100vh - 80px ) !important;
+  }
 </style>
 <body class="h-screen bg-red-500">
 
-  <div class="board h-screen text-center text-5xl font-bold pb-4">
+  <div class="board h-screen text-center text-[82px] font-bold pb-4">
 
 
   <div class="answer flex justify-center items-center h-1/6 p-4 pb-0 overflow-hidden">
-    <div class="uppercase relative bg-white w-full h-full flex justify-center items-center border-8 border-dotted border-white">Elvis Presley</div>
+    <div class="uppercase relative bg-white w-full h-full flex justify-center items-center border-[1.25rem] border-dotted border-white">Elvis Presley</div>
   </div>
 
   
